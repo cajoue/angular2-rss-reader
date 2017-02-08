@@ -12,10 +12,12 @@ import { MdToolbarModule } from '@angular2-material/toolbar';
 
 import { AppComponent } from './app.component';
 import { FeedService } from './feed.service';
+import { FeedCardComponent } from './feed-card/feed-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FeedCardComponent
   ],
   imports: [
     BrowserModule,
