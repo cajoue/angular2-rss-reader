@@ -13,11 +13,13 @@ import { MdToolbarModule } from '@angular2-material/toolbar';
 import { AppComponent } from './app.component';
 import { FeedService } from './feed.service';
 import { FeedCardComponent } from './feed-card/feed-card.component';
+import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeedCardComponent
+    FeedCardComponent,
+    StripHtmlTagsPipe
   ],
   imports: [
     BrowserModule,
