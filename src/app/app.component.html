@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <span class="center">RSS News</span>
+  <span class="right"><button md-button (click)="refreshFeed()"><md-icon> refresh </md-icon></button></span> 
+</md-toolbar>
+
+<app-feed-card *ngFor="let feed of feeds" [feed]="feed"></app-feed-card>
