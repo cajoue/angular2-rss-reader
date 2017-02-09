@@ -13,4 +13,7 @@ export class FeedCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  private openLinkInBrowser() {
+    window.open(this.feed.link);
+  }
 }
