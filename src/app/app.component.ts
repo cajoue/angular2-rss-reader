@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FeedService } from './feed.service';
+import { FeedEntry } from './model/feed-entry';
 // Add the RxJS Observable operators we need in this app.
 import './rxjs-operators';
 
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
   /*private feedUrl: string = 'https://techcrunch.com/feed/';*/
   /*private feedUrl: string = 'http://www.rockclimbing.com/rss/routes/ascents/new.xml';*/
 
-  private feeds: any;
+  private feeds: Array<FeedEntry> = [];
 
   constructor (
     private feedService: FeedService
@@ -30,7 +31,9 @@ export class AppComponent implements OnInit {
   }
 
   private refreshFeed() {
-    this.feedService.getFeedContent(this.feedUrl)
+    this.feeds.length = 0;
+    // Add 1s of delay to provide user feedback
+    this.feedService.getFeedContent(this.feedUrl).delay(1000)
                     .subscribe(
                       feed => this.feeds = feed.items,
                       error => console.log(error)

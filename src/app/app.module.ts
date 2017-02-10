@@ -9,6 +9,7 @@ import { MdCardModule } from '@angular2-material/card';
 import { MdCoreModule } from '@angular2-material/core';
 import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
 import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdSpinner } from '@angular2-material/progress-circle';
 
 import { AppComponent } from './app.component';
 import { FeedService } from './feed.service';
@@ -19,7 +20,8 @@ import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
   declarations: [
     AppComponent,
     FeedCardComponent,
-    StripHtmlTagsPipe
+    StripHtmlTagsPipe,
+    MdSpinner
   ],
   imports: [
     BrowserModule,
